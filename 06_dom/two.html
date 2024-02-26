@@ -1,0 +1,37 @@
+<!-- Lecture - 33 🙌🙌 -->
+<!-- How to create new element in dom -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Chai aur Code</title>
+</head>
+<body style="background-color: #212121; color: aliceblue;">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thrusday</div>
+    </div>
+</body>
+<script>
+    const parent = document.querySelector('.parent');
+    console.log(parent);
+    console.log(parent.children[1].innerHTML);// received html collection
+
+    for(let i =0;i<parent.children.length;i++){
+       console.log( parent.children[i].innerHTML);
+    }
+    parent.children[1].style.color = 'darkred';
+    console.log(parent.firstElementChild);
+    console.log(parent.lastElementChild);
+
+    const day1 = document.querySelector('.day');
+    console.log(day1);
+    console.log(day1.parentElement);
+    console.log(day1.nextElementSibling);
+
+    console.log("NODES : ", parent.childNodes); //here we got 9 as above 4 node each line break is a node (ENTER) this is little complex can be seen in video
+</script>
+</html>

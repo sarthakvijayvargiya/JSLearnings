@@ -1,0 +1,32 @@
+<!-- Lecture 38 🙌🙌 -->
+<!-- Async JS Project -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Sarthak's Page for Async JS</h1>
+    <button type="submit" id="button">STOP</button>
+</body>
+<script>
+    function sayLearning(){
+        console.log('On a phase of learning JS');
+    }
+
+    setTimeout(sayLearning,3000);
+
+    function changeText (){
+        document.querySelector('h1').innerHTML = 'Learning JS Slowly but consistently';
+    }
+
+    const changeMe = setTimeout(changeText,3000)
+
+        document.querySelector('#button').addEventListener('click',function(){
+            clearTimeout(changeMe);
+            console.log('STOPPED CHANGING');
+        })
+</script>
+</html>

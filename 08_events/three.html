@@ -1,0 +1,41 @@
+<!-- Lecture 38 🙌🙌 -->
+<!-- Async JS Project -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Sarthak's Page for Async JS - setInterval</h1>
+    <button type="submit" id="start">START</button>
+    <button type="submit" id="stop">STOP</button>
+</body>
+<script>
+
+    function displayContent(str){
+        console.log(`${str}, Sarthak ${Date.now()}`);
+    };
+    let intervalID;
+    
+    function startInterval(){
+        console.log(intervalID)
+        if(!intervalID){
+            intervalID = setInterval(displayContent,1000,'Hi') 
+        }
+    }
+
+    function stopInterval(){
+        clearInterval(intervalID)
+        intervalID = null;
+    }
+
+        
+    const start = document.querySelector('#start');
+    const stops = document.querySelector('#stop');
+
+    start.addEventListener('click',startInterval)
+    stops.addEventListener('click',stopInterval)
+</script>
+</html>

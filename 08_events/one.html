@@ -1,0 +1,99 @@
+<!-- Lecture - 36 🙌🙌 -->
+<!-- Events in Js -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Events</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+</body>
+<script>
+    // document.getElementById('owl').onclick = function(){
+    //     alert('owl clicked')
+    // }// this works okay but does not give info , we need to use event listners for this as it gives propogation capability also
+
+    //--  can listen click drag and drop etc and these are some event
+    // attachevent is also there used in earlier days of internet expoloer time
+    
+    // Learn for Event - type, timeStamp, defaultPrevented , target, toElement , srcElement, currentTarget
+    // clinetX, y, ScreenX, screenY
+    // altKey , ctrlkey , shiftkey ,keycode
+
+document.getElementById('owl').addEventListener('click',function(e){// event objects here we get browser event , enviroment event
+   console.log(e);
+},false)
+// event propogation -- can be learned by doing true false -- there are two event bubbling , event capturing
+// most used - false - event bubbling
+document.getElementById('images').addEventListener('click',function(){
+   console.log("Clicked insdie the ul");
+},false)
+document.getElementById('owl').addEventListener('click',function(){
+   console.log("Clicked owl");
+},false)
+ 
+// event bubbling -means - bubble niche se upr jata h , inner element , fir li , fir ul
+
+
+// event capturing - upr se niche - so pelhe clicked owl aayega fir Clicked insdie the ul
+document.getElementById('owl').addEventListener('click',function(){
+   console.log("Clicked owl");
+},true)
+
+
+document.getElementById('owl').addEventListener('click',function(e){
+   console.log("Clicked owl");
+//    if we dont want bubbling of event do-
+e.stopPropagation()
+},false)
+
+
+
+// defualt prevented -- most used in forms
+document.getElementById('google').addEventListener('click', function(e){  
+    console.log('google clicked');
+    e.preventDefault();
+})
+
+
+document.querySelector('#images').addEventListener('click',(e)=>{
+    console.log(e.target.parentNode);
+    let removeIt = e.target.parentNode;
+    // removeIt.remove();//one option
+    removeIt.parentNode.removeChild(removeIt)//other option
+},false)
+
+// 1 flow is present in this -- if clicked in LI instead of img - entire list is erased , so to overcome this
+document.querySelector('#images').addEventListener('click',(e)=>{
+    console.log(e.target.tagName);
+    if(e.target.tagName === 'IMG'){
+        console.log(e.target.id);
+        let removeIt = e.target.parentNode;
+        removeIt.remove();//one option
+    }
+},false)
+</script>
+</html> 
+
+
+<!-- Lecture - 37  🙌🙌 -->
+<!-- Async JS Fundamentals -->
+<!-- theory lang can be rewatched on every revusion-->
+<!-- JS Asyncronous lang hai but uska default behavious synchoronous hota usko hm forcefully async bnate h -->
+
+<!-- Synchronous - mtlb - ek code execute hoga uske baad ek code execute hoga uske baad ek code execute hoga -->
+<!-- single threaded - sirf ek hi thread p code execute hoga , JS always seen in run time environment like browser, Node , akela js engine kahi nhi milta-->
+<!-- above is defalut js behavior -->

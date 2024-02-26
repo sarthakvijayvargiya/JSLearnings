@@ -1,0 +1,53 @@
+<!-- Lecture -- 31 🙌🙌 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Learning</title>
+    <style>
+        .bg-black{
+            background-color: #212121;
+            color: aliceblue;
+        }
+    </style>
+</head>
+<body class="bg-black">
+    <!-- DOM -- Document Object Model -->\
+    <div>
+        <h1 id="title" class="heading">DOM Learning on Chai aur code</h1>
+        <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+</body>
+</html>
+<!-- at the end kuch bhi use kre react angular jo document bnta h vo html se hi tho bnta h -->
+<!-- Document jo bnta h - HTML jo bnta h vo kuch object se hi tho bnta h  - head body objects ,so y DOM so y jo document bna hua h vo kis model se bna hua h - kya uska structure h - page kese dikhta h y smjh m aa gya tho uska manupulation bhi kr paynege , manupulaition mtlb changes data in and out etc-->
+
+<!-- Or fir agar event ko smjh le tho ek button click p kya hona chaiye server p jani chiaye y sb smjh aa jayega -->
+
+<!-- we can see the document in brower inspect doing console.log(document) or console.log(window.document)-->
+
+<!-- HTMLCollection , NodeCollection , Array are different things -->
+<!-- rewatch this video -->
+<!-- document.getElementbyid -- this is the one of the possible way to access element from document for manupulation -->
+
+
+
+<!-- Lecture 32 - 🙌🙌 - All DOM selectors NodeList and HTMLCollection-->
+<!-- rewatch video -->
+<!-- .getElementbyid .id .className .getAttribute .setAttribute-->
+
+<!-- document.getElementById('title')
+const title = document.getElementById('title') 
+title.style.backgroundColor = 'red'
+title.textcontent , title.innerHTML ,title.innerText (all three are different) -- difference of span display none
+.getelmentbyClassName
+.querysleector
+.queryselectorAll-->
+
+<!-- document.getElementById('title').getAttribute('id')  -->
+<!-- document.getElementById('title').getAttribute('class')  -->
+<!-- document.getElementById('title').setAttribute('class','test') -it overrides existing class -->
+
+<!-- NodeList and HTMLCollection are not pure array and they both are different -->
+<!-- to convert this list to array use Array.from() -->
