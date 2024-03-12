@@ -23,7 +23,7 @@ console.log(myArr.indexOf(2)); // gives index if present otherwise -1
 const newArr = myArr.join();
 console.log(myArr);
 console.log(typeof newArr);
-
+console.log(newArr);
 // slice, splice
 
 console.log("A", myArr);
