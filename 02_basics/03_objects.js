@@ -29,7 +29,7 @@ console.log(typeof sym);
 
 jsUser.age = 22;
 console.log(jsUser);
-// Object.freeze(jsUser); // object.frezze help us to frezze the object so no chnages can be take place later on 
+Object.freeze(jsUser); // object.frezze help us to frezze the object so no chnages can be take place later on 
 jsUser.age = 52;
 console.log(jsUser);
 
@@ -42,5 +42,5 @@ jsUser.grettingTwo = function(){
 }// here if we want to refer same object we can use this keyword
 
 console.log(jsUser.gretting);// got function reference returned later this is needed not now
-console.log(jsUser.gretting());
-console.log(jsUser.grettingTwo());
+// console.log(jsUser.gretting());
+// console.log(jsUser.grettingTwo());

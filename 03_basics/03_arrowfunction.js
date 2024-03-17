@@ -8,7 +8,7 @@ const user = {
 
     welcomeMessage: function(){
         console.log(`${this.userName},  welcome to website`);
-        // console.log(this);
+        console.log(this);
     }
 }
 // jb bhi current context ko refer krna h tho use this KW current context is user scope {}

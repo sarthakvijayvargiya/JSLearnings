@@ -1,5 +1,5 @@
 // Lecture 25 -- 🙌🙌
-// How does java code execute + Call stack
+// How does javascript code execute + Call stack
 
 // Execution context -- code break hoke execute hota h
 // Call stack --  code kese memory k ander jayega kese execute hoga or kese bahar aayega
