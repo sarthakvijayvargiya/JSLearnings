@@ -16,7 +16,6 @@ async function getData(){
     let data = await response.json();
     console.log(data);
 }
-
 // response (JSON)--> JS object
 // Understanding Terms
 

@@ -86,10 +86,10 @@ getData(1,()=>{
 // let promise = new Promise((reject, resolve)=>{...})
 // resolve reject are callbacks provided by js
 
-/*let promise = new Promise((res,rej)=>{
-    console.log("I am a promise");
-    res("success");
-})*/
+// let promise = new Promise((res,rej)=>{
+//     console.log("I am a promise");
+//     res("success");
+// })
 // promise is object in JS can have 3 states - pending(result is undefined), fulfilled(resolved), rejected(result is an error object)
 // It have 2 handlers - resolve reject y automaically JS se create hote h
 
@@ -117,13 +117,14 @@ console.log(promiseData);*/ // promiseData is promise is pending and after 4s it
 }
 
 const gotPromise = getPromise();
+// console.log(gotPromise);
 gotPromise.then((res)=>{
     console.log(`Promise fulfiiled ${res}`);
 })
 gotPromise.catch((err)=>{
     console.log(`Promise Rejected ${err}`);
-})*/
-
+})
+*/
 
 // Promise chain
 // what we want is - first data1 is successfully execute then only data 2 should execute after 4 sec (for this we can do promise chaining)
@@ -194,10 +195,10 @@ function getData(dataId){
 // async function myFunc(){}
 // await(kishi chiz ka intezar) pauses the execution of its surrounding async function until the promise is settled
 
-// async function hello(){
-//     console.log("hello");
-// }
-// hello()
+async function hello(){
+    console.log("hello");
+}
+hello()
 
 function api(id){
     return new Promise((res)=>{
